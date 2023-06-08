@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$(sudo) $(chown) betty hello"
+sudo chown betty hello
