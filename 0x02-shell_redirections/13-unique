@@ -1,2 +1,2 @@
 #!/bin/bash
-sort list | uniq
+read -p && echo "$REPLY" | sort | uniq -u
