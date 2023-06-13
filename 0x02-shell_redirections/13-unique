@@ -1,2 +1,2 @@
 #!/bin/bash
-read -p && echo "$REPLY" | sort | uniq -u
+sort | uniq -c | awk '$1 == 1 {print $2}'
