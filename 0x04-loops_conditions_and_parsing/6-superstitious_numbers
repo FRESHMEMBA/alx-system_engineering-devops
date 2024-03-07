@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Displays superstitious according to countries times using the until loop
+i=1
+while [ $i -le 20 ]
+do
+    case $1 in
+        
+    ((i++))
+done
