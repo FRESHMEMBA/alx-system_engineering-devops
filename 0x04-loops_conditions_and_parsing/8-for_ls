@@ -2,9 +2,10 @@
 #Prints the files in the current directory
 for file in *
 do
+	filename=$file
 	if [[ $file == *-* ]]
 	then
 		filename="${file#*-}"
-		echo "$filename"
 	fi
+	echo "$filename"
 done
