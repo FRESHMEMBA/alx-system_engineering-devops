@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#Prints the files in the current directory
+for file in *
+do
+	if [[ $file == *-* ]]
+	then
+		filename="${file#*-}"
+		echo "$filename"
+	fi
+done
