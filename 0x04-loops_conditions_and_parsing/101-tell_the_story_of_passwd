@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Displays the content of the file /etc/passwd
+IFS=":"
+while read -r username password uid gid info homedir shell; do
+    # Extract user info
+    echo "The user $username is part of the $gid gang, lives in $homedir and rides $shell. $uid's place is protected by the passcode $password, more info about the user here: $info"
+done < "/etc/passwd"
