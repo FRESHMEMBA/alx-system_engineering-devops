@@ -1,0 +1,27 @@
+#/!usr/bin/env bash
+#Process and PID file
+
+sigterm_handler() {
+    echo "I hate the kill command"
+}
+
+sigint_handler() {
+    echo "Y U no love me?!"
+}
+
+sigquit_handler() {
+    echo "Deleting PID file and terminating script..."
+    rm /var/run/myscript.pid
+    exit 0
+}
+
+trap 'sigterm_handler' SIGTERM
+trap 'sigint_handler' SIGINT
+trap 'sigquit_handler' SIGQUIT
+
+echo $$ > /var/run/myscript.pid
+
+while true; do
+    echo "To infinity and beyond"
+    sleep 1
+done
