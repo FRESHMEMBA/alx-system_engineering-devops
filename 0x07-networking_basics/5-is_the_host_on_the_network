@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #pings an IP address passed as an argument
-if [ $# -ne 1 ]
+if [ $# -lt 2 ]
 then
 	echo "Usage: {$0} {IP_ADDRESS}"
 else
