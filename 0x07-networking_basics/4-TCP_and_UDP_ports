@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+#Displays the listening ports.
 o "Active Internet connections (only servers)"
 echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
 netstat -tuln | awk '$NF == "LISTEN" {print $1, $4, $7}' | while read -r proto local foreign state; do
