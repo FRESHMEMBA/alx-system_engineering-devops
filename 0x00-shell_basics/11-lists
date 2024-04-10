@@ -1,4 +1,2 @@
 #!/bin/bash
-ls -al .
-ls -al "$(dirname "$(pwd)")"
-ls -al /boot
+cat <(ls -al .) <(ls -al <"$(dirname "$(pwd)")") <(ls -al /boot)
