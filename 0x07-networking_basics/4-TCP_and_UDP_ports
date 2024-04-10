@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#Displays the listening ports.
+o "Active Internet connections (only servers)"
+echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
+netstat -tuln | awk '$NF == "LISTEN" {print $1, $4, $7}' | while read -r proto local foreign state; do
+    pid_program=$(lsof -i ${proto,,}@$local | awk 'NR==2 {print $2, $1}')
+        echo "$proto $local $state $pid_program"
+	done
+
+	echo "Active UNIX domain sockets (only servers)"
+	echo "Proto RefCnt Flags       Type       State         I-Node   PID/Program name    Path"
+	netstat -lx | awk '$1 == "unix" && $NF == "LISTENING" {print $1, $4, $5}' | while read -r proto type state inode pid_program path; do
+	    echo "$proto $type $state $inode $pid_program $path"
+	    done
