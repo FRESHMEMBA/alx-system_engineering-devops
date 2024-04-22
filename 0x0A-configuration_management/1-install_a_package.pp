@@ -1,3 +1,4 @@
+#!/usr/bin/pup
 # Installs a package
 
 package {'python3-flask':
