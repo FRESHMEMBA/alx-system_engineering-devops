@@ -1,6 +1,6 @@
 # Installs a package
 
-package {'flask':
+package {'python3-flask':
     ensure   => 'installed',
     provider => 'pip'
 }
