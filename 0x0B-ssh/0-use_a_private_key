@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Uses ssh to connect to a remote server
 
-username="ubuntu"
-server_ip="100.25.163.201"
-private_key="~/.ssh/school"
+user="ubuntu"
+host="100.25.163.201"
+key="~/.ssh/school"
 
-ssh -i "$private_key" "$username@$server_ip"
+ssh -i "$key" "$user@$host"
