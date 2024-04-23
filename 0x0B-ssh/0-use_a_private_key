@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Uses ssh to connect to a remote server
 
 username="ubuntu"
 server_ip="100.25.163.201"
