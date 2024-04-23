@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Uses ssh to connect to a remote server
 
-ssh -i "~/.ssh/school" "ubuntu"@"453837-web-01"
+ssh -i "~/.ssh/school" "ubuntu@453837-web-01"
