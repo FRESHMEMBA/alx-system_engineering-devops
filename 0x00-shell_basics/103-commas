@@ -1,0 +1,2 @@
+#!/bin/bash
+(ls -A1 | sort -f | awk 'BEGIN{dirs=""; files=""; ORS=","} $0 == "." { print "."; next } $0 == ".." { print ".."; next } { if (system("[ -d \""$0"\" ]") == 0) dirs = dirs $0"/,"; else files = files $0".," } END { printf "%s%s\n", dirs, files }')
