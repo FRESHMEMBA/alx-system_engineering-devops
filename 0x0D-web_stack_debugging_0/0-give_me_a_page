@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Debugs a web server
+sudo service apache2 start
