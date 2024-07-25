@@ -1,30 +1,12 @@
 #!/usr/bin/env bash
 # Generates a compressed archive of a MySQL dump.
-mysqldump -uroot -p"$1" --all-databases > backup.sql
-tar -cvzf "$(date +%d-%m-%Y)".tar.gz backup.sql
+# mysqldump -uroot -p"$1" --all-databases > backup.sql
+# tar -cvzf "$(date +%d-%m-%Y)".tar.gz backup.sql
 
+day=$(date +"%d")
+month=$(date +%m")
+year=$(date +"%Y")
+filename="$day-$month-$year.tar.gz"
 
-# #!/usr/bin/env bash
-# # Generates a MySQL dump and creates a compressed archive out of it
-
-# # Check if the password argument is provided
-# if [ -z "$1" ]; then
-#   echo "Usage: $0 <mysql_root_password>"
-#   exit 1
-# fi
-
-# MYSQL_ROOT_PASSWORD=$1
-
-# # Generate the MySQL dump
-# mysqldump -u root -p"$MYSQL_ROOT_PASSWORD" --all-databases > backup.sql
-
-# # Get the current date
-# CURRENT_DATE=$(date +"%d-%m-%Y")
-
-# # Create a compressed archive of the MySQL dump
-# tar -czvf "$CURRENT_DATE.tar.gz" backup.sql
-
-# # Remove the uncompressed SQL dump
-# # rm backup.sql
-
-# echo "Backup completed: $CURRENT_DATE.tar.gz"
+mysqldump --all-databases -u root --password="$1" > backup.sql
+tar -czvf "$filename" backup.sql
