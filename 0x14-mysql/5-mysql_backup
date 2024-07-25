@@ -19,6 +19,6 @@ CURRENT_DATE=$(date +"%d-%m-%Y")
 tar -czvf "$CURRENT_DATE.tar.gz" backup.sql
 
 # Remove the uncompressed SQL dump
-rm backup.sql
+# rm backup.sql
 
 echo "Backup completed: $CURRENT_DATE.tar.gz"
