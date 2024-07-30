@@ -25,7 +25,7 @@ def get_employee_info(id):
     return employee_name, todos
 
 if __name__ == "__main__":
-    id = argv[1]
+    id = int(argv[1])
     employee_name, todos = get_employee_info(id=id)
     completed_tasks = [todo for todo in todos if todo.get("completed")]
     number_of_complete_tasks = len(completed_tasks)
