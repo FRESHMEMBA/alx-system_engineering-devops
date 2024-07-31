@@ -1,4 +1,14 @@
 #!/usr/bin/python3
+
+"""
+Exports data in the CSV format.
+
+Records all tasks that this employee owns
+Format: "USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"
+The file name: USER_ID.csv
+"""
+
+
 from sys import argv
 from my_tools import get_employee_info, export_to_csv
 
