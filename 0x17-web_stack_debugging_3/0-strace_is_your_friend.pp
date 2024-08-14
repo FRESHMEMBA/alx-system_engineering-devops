@@ -2,8 +2,8 @@
 
 # Ensure the correct file reference in wp-settings.php
 exec { 'fix-wp-locale-typo':
-    command => 'sed -i "s/class-wp-locale.phpp/class-wp-locale.php/" /var/www/html/wp-settings.php',
-    onlyif  => 'grep "class-wp-locale.phpp" /var/www/html/wp-settings.php',}
+    command => '/bin/sed -i "s/class-wp-locale.phpp/class-wp-locale.php/" /var/www/html/wp-settings.php',
+    onlyif  => '/bin/grep "class-wp-locale.phpp" /var/www/html/wp-settings.php',}
 
 # Restart Apache to apply the changes
 service { 'apache2':
