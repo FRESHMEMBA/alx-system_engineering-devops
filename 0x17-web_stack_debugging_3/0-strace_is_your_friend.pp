@@ -9,5 +9,5 @@ exec { 'fix-wp-locale-typo':
 service { 'apache2':
     ensure  => running,
     enable  => true,
-    require => File_line['fix-wp-locale-typo'],
+    require => Exec['fix-wp-locale-typo'],
 }
