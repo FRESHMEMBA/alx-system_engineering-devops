@@ -3,6 +3,9 @@
 **Incident Date**: August 14, 2024  
 **Author**: Sibonelo Mazibuko
 
+![Server Diagram](./DALL·E%202024-08-18%2021.36.21%20-%20A%20fun,%20cartoon-style%20diagram%20showing%20a%20server%20(depicted%20as%20a%20distressed%20character)%20with%20a%20large%20magnifying%20glass%20(labeled%20'strace')%20investigating%20a%20sm.webp)
+
+
 ---
 
 #### **Summary**
