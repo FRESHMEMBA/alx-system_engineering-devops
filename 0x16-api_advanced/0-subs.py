@@ -41,7 +41,8 @@ def number_of_subscribers(subreddit):
         else:
             # Return 0 if the subreddit is invalid
             return 0
-    
+
     except requests.RequestException:
         # Return 0 in case of any request exception
         return 0
+

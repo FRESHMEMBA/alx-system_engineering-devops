@@ -2,7 +2,7 @@
 """
 Defines a recursive function that queries the Reddit API,
 and parses the title of all hot posts, and prints a sorted count of given
-keywords (case-insensitive, delimited by spaces) 
+keywords (case-insensitive, delimited by spaces)
 """
 
 
@@ -13,7 +13,7 @@ def count_words(subreddit, word_list, after=None, word_count={}):
     """
     Recursively queries the /Reddit API, parses the titles of all hot articles,
     and counts the occurenece of specified keywords (case-insensitive)
-    
+
     - subreddit: The subreddit to be queried.
     - word_list: A listof of keywords to count in the titles.
     - after: The 'after' paramter for pagination.
@@ -29,7 +29,12 @@ def count_words(subreddit, word_list, after=None, word_count={}):
 
     try:
         # Send a get request to Reddit
-        response = requests.get(url, headers=headers, params=params, allow_redirects=False)
+        response = requests.get(
+            url,
+            headers=headers,
+            params=params,
+            allow_redirects=False
+        )
 
         # Check if the request is succesful
         if response.status_code != 200:
@@ -54,7 +59,10 @@ def count_words(subreddit, word_list, after=None, word_count={}):
             word_count = {k: v for k, v in word_count.items() if v > 0}
 
             # Sort by count (desc) and alphabetically (asc)
-            sorted_word_count = sorted(word_count.items(), key=lambda item: (-item[1], item[0]))
+            sorted_word_count = sorted(
+                word_count.items(),
+                key=lambda item: (-item[1], item[0])
+                )
 
             # Print the results
             for word, count in sorted_word_count:

@@ -10,7 +10,9 @@ Requirements:
         Ensure that you are not following redirects.
 """
 
+
 import requests
+
 
 def top_ten(subreddit):
     """
