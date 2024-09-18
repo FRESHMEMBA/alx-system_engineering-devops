@@ -1,17 +1,27 @@
 server {
-	listen 80;
-	server_name localhost 100.27.12.28;
+    listen 80;
+    listen [::]:80 default_server;
+    add_header X-Served-By $hostname;
+    root   /etc/nginx/html;
+    index  index.html index.htm;
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+    root /var/www/html;
 
-	location /airbnb-onepage/ {
-		proxy_pass http://127.0.0.1:5000;
-		proxy_set_header Host $host;
-		proxy_set_header X-Real-IP $remote_addr;
-		proxy_set_header X-Forwarded-For $proxy_add_x_forwaded_for;
-		proxy_set_header X-Forwaded-Proto $scheme;
-	}
+    server_name _;
 
-	error_page 404 /404.html;
-	location = /404/html {
-		internal;
-	}
+    location /airbnb-onepage {
+        proxy_pass http://0.0.0.0:5000/airbnb-onepage;
+    }
+
+    location /hbnb_static {
+        alias /data/web_static/current/;
+    }
+
+    location /{
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        try_files $uri $uri/ =404;
+     }
 }
