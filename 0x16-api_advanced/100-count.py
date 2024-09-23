@@ -39,7 +39,7 @@ def count_words(subreddit, word_list, after=None, word_count={}):
         # Check if the request is succesful
         if response.status_code != 200:
             return
-        
+
         data = response.json()
         posts = data['data']['children']
         after = data['data']['after']
