@@ -29,6 +29,5 @@ def top_ten(subreddit):
     except Exception:
         print(None)
 
-
-if __name__ == "__main__":
-    top_ten(argv[1])
+# if __name__ == "__main__":
+#     top_ten(argv[1])
